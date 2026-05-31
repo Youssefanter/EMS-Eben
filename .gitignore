@@ -1,0 +1,15 @@
+# =========================
+# Client (Frontend)
+# =========================
+client/node_modules/
+client/build/
+client/dist/
+client/.env
+
+# =========================
+# Server (Backend)
+# =========================
+server/__pycache__/
+server/venv/
+server/env/
+server/*.pyc
