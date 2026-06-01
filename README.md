@@ -12,49 +12,45 @@ The application provides a secure and scalable platform for managing companies, 
 
 Three distinct user roles with strict permission boundaries:
 
-* **System Administrator**
+- **System Administrator**
+  - Full access to all companies, departments, and employees.
+  - Create, update, and delete any record.
 
-  * Full access to all companies, departments, and employees.
-  * Create, update, and delete any record.
+- **HR Manager**
+  - Manage departments and employees within assigned companies.
+  - Restricted from accessing data outside their company.
+  - Cannot create or delete companies.
 
-* **HR Manager**
-
-  * Manage departments and employees within assigned companies.
-  * Restricted from accessing data outside their company.
-  * Cannot create or delete companies.
-
-* **Employee**
-
-  * Read-only access to personal profile information.
-  * View employment details and statistics.
+- **Employee**
+  - Read-only access to personal profile information.
+  - View employment details and statistics.
 
 ### 🔑 Secure Authentication
 
-* JWT-based authentication using `djangorestframework-simplejwt`.
-* Secure login and token management.
-* Frontend decodes JWT payloads to dynamically render UI elements based on user permissions.
+- JWT-based authentication using `djangorestframework-simplejwt`.
+- Secure login and token management.
+- Frontend decodes JWT payloads to dynamically render UI elements based on user permissions.
 
 ### 🏢 Multi-Tenant Data Isolation
 
-* HR Managers can only access records associated with their assigned companies.
-* Strict backend enforcement prevents unauthorized data access.
+- HR Managers can only access records associated with their assigned companies.
+- Strict backend enforcement prevents unauthorized data access.
 
 ### 📊 Dynamic Data Processing
 
-* Real-time **Days Employed** calculation on the frontend.
-* Backend aggregation for:
-
-  * Department employee counts
-  * Company department counts
-  * Employee statistics
+- Real-time **Days Employed** calculation on the frontend.
+- Backend aggregation for:
+  - Department employee counts
+  - Company department counts
+  - Employee statistics
 
 ### 🎨 Modern User Experience
 
-* Responsive design with Tailwind CSS.
-* Protected routes and role-based navigation.
-* Interactive data tables.
-* Toast notifications for user feedback.
-* Loading skeletons and smooth user interactions.
+- Responsive design with Tailwind CSS.
+- Protected routes and role-based navigation.
+- Interactive data tables.
+- Toast notifications for user feedback.
+- Loading skeletons and smooth user interactions.
 
 ---
 
@@ -62,24 +58,24 @@ Three distinct user roles with strict permission boundaries:
 
 ### Frontend
 
-* React
-* TypeScript
-* React Router DOM
-* Tailwind CSS
-* React Hot Toast
-* Axios
+- React
+- TypeScript
+- React Router DOM
+- Tailwind CSS
+- React Hot Toast
+- Axios
 
 ### Backend
 
-* Django
-* Django REST Framework (DRF)
-* SimpleJWT
-* Django ORM
+- Django
+- Django REST Framework (DRF)
+- SimpleJWT
+- Django ORM
 
 ### Database
 
-* SQLite (Development)
-* PostgreSQL (Production Ready)
+- SQLite (Development)
+- PostgreSQL (Production Ready)
 
 ---
 
@@ -100,12 +96,12 @@ React (TypeScript)
 
 ### Security Highlights
 
-* Custom ViewSet permission enforcement.
-* Backend-level access restrictions.
-* JWT-based authorization.
-* Self-deletion protection for active users.
-* Secure serializer configurations using `write_only=True`.
-* API request validation independent of frontend restrictions.
+- Custom ViewSet permission enforcement.
+- Backend-level access restrictions.
+- JWT-based authorization.
+- Self-deletion protection for active users.
+- Secure serializer configurations using `write_only=True`.
+- API request validation independent of frontend restrictions.
 
 ---
 
@@ -135,7 +131,7 @@ EMS/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/employee-management-system.git
+git clone https://github.com/Youssefanter/EMS-Eben
 
 cd employee-management-system
 ```
@@ -256,15 +252,15 @@ http://localhost:5173/
 
 | Action             | Admin | HR Manager    | Employee    |
 | ------------------ | ----- | ------------- | ----------- |
-| View Companies     | ✅     | Assigned Only | ❌           |
-| Create Company     | ✅     | ❌             | ❌           |
-| Edit Company       | ✅     | ❌             | ❌           |
-| Delete Company     | ✅     | ❌             | ❌           |
-| View Departments   | ✅     | Assigned Only | ❌           |
-| Manage Departments | ✅     | Assigned Only | ❌           |
-| View Employees     | ✅     | Assigned Only | Own Profile |
-| Manage Employees   | ✅     | Assigned Only | ❌           |
-| Delete Employees   | ✅     | Assigned Only | ❌           |
+| View Companies     | ✅    | Assigned Only | ❌          |
+| Create Company     | ✅    | ❌            | ❌          |
+| Edit Company       | ✅    | ❌            | ❌          |
+| Delete Company     | ✅    | ❌            | ❌          |
+| View Departments   | ✅    | Assigned Only | ❌          |
+| Manage Departments | ✅    | Assigned Only | ❌          |
+| View Employees     | ✅    | Assigned Only | Own Profile |
+| Manage Employees   | ✅    | Assigned Only | ❌          |
+| Delete Employees   | ✅    | Assigned Only | ❌          |
 
 ---
 
@@ -274,10 +270,10 @@ http://localhost:5173/
 
 Django ViewSets implement custom permission checks through:
 
-* `check_permissions()`
-* `perform_create()`
-* `perform_update()`
-* `perform_destroy()`
+- `check_permissions()`
+- `perform_create()`
+- `perform_update()`
+- `perform_destroy()`
 
 This ensures unauthorized requests are blocked at the API level.
 
@@ -285,10 +281,10 @@ This ensures unauthorized requests are blocked at the API level.
 
 Leveraging:
 
-* `SerializerMethodField`
-* Nested serializers
-* `write_only=True`
-* Dynamic aggregation logic
+- `SerializerMethodField`
+- Nested serializers
+- `write_only=True`
+- Dynamic aggregation logic
 
 for secure and optimized data handling.
 
@@ -296,10 +292,10 @@ for secure and optimized data handling.
 
 The React frontend decodes JWT payloads synchronously to:
 
-* Determine user permissions instantly.
-* Prevent UI flickering.
-* Protect restricted routes.
-* Render role-specific navigation menus.
+- Determine user permissions instantly.
+- Prevent UI flickering.
+- Protect restricted routes.
+- Render role-specific navigation menus.
 
 ### Self-Deletion Protection
 
@@ -311,25 +307,25 @@ Custom backend safeguards prevent users from deleting their own active accounts,
 
 Add screenshots of:
 
-* Login Page
-* Dashboard
-* Company Management
-* Department Management
-* Employee Management
-* Employee Profile
+- Login Page
+- Dashboard
+- Company Management
+- Department Management
+- Employee Management
+- Employee Profile
 
 ---
 
 ## 🔮 Future Enhancements
 
-* Employee attendance tracking
-* Leave management system
-* Payroll integration
-* Audit logging
-* Email notifications
-* Analytics dashboard
-* Docker deployment
-* CI/CD pipeline
+- Employee attendance tracking
+- Leave management system
+- Payroll integration
+- Audit logging
+- Email notifications
+- Analytics dashboard
+- Docker deployment
+- CI/CD pipeline
 
 ---
 
