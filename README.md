@@ -303,18 +303,6 @@ Custom backend safeguards prevent users from deleting their own active accounts,
 
 ---
 
-## 📸 Screenshots
-
-Add screenshots of:
-
-- Login Page
-- Dashboard
-- Company Management
-- Department Management
-- Employee Management
-- Employee Profile
-
----
 
 ## 🔮 Future Enhancements
 
@@ -331,7 +319,7 @@ Add screenshots of:
 
 ## 👨‍💻 Developer
 
-**Youssef Aly Antar**
+**Youssef Antar**
 
 Integration Developer | Backend & Full-Stack Enthusiast
 
